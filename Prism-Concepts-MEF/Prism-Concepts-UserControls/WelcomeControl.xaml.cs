@@ -18,13 +18,13 @@ using Prism_Concepts_Infrastructure;
 namespace Prism_Concepts_UserControls
 {
     /// <summary>
-    /// Interaction logic for CustomerControl.xaml
+    /// Interaction logic for WelcomeControl.xaml
     /// </summary>
     [ViewExport(RegionName = "ShellContent")]
     [PartCreationPolicy(CreationPolicy.Shared)]
-    public partial class CustomerControl : UserControl
+    public partial class WelcomeControl : UserControl
     {
-        public CustomerControl()
+        public WelcomeControl()
         {
             InitializeComponent();
         }

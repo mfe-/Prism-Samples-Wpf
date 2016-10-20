@@ -28,11 +28,7 @@
             </i:Interaction.Triggers>
         </Button>
         <DockPanel Background="Green">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseDown">
-                    <i:InvokeCommandAction Command="{Binding Path=MessageCommand}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+            <ContentControl x:Name="ShellContent" prism:RegionManager.RegionName="ShellContent" />
         </DockPanel>
 
     </DockPanel>

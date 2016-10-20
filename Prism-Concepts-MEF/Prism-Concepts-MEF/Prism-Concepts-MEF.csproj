@@ -123,6 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Prism-Concepts-Infrastructure\Prism-Concepts-Infrastructure.csproj">
+      <Project>{ece198bc-cb7d-4d4c-8e02-2b5bb262b472}</Project>
+      <Name>Prism-Concepts-Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prism-Concepts-UserControls\Prism-Concepts-UserControls.csproj">
       <Project>{50C40589-AE3B-47EB-ABD1-E63ED215C3BD}</Project>
       <Name>Prism-Concepts-UserControls</Name>

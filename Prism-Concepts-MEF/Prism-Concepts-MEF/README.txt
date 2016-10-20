@@ -76,3 +76,9 @@ Regions & Navigation
 1.) Create infrastructure project
 2.) Add necessary files
 
+1.) Add to bootstrapper region factory and register assemblycatalog of infrastructure project
+2.) add to usercontrol project new uc named welcomecontrol and add proper vm (dont forget export/import attr., autowireprop)
+3.) add      <ContentControl x:Name="ShellContent" prism:RegionManager.RegionName="ShellContent" /> to mainwindow
+4.) Add NavigateCommand to MainWindowViewModel, Add IRegionManager to constructor, Call RequestNavigation on NavigationCommand
+5.) Add to all usercontrols in codebehind     [ViewExport(RegionName = RegionNames.ShellContent)] and     [PartCreationPolicy(CreationPolicy.Shared)]
+6.) Add to CustomerControl and WelcomeControl IRegionManager and add MoveCommands to Call RequestNavigate

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Interactivity.InteractionRequest;
+using Prism.Regions;
 
 namespace Prism_Concepts_MEF
 {
@@ -13,10 +14,12 @@ namespace Prism_Concepts_MEF
     public class MainWindowViewModel : Prism.Mvvm.BindableBase
     {
         protected readonly IWebService _IWebService;
+        protected readonly IRegionManager _RegionManager;
         [ImportingConstructor]
-        public MainWindowViewModel(IWebService webService, Prism.Logging.ILoggerFacade logger)
+        public MainWindowViewModel(IRegionManager regionManager, IWebService webService, Prism.Logging.ILoggerFacade logger)
         {
             _IWebService = webService;
+            _RegionManager = regionManager;
             MessageCommand = new DelegateCommand(OnMessageCommand);
 
             MessageControlInteraction = new InteractionRequest<IConfirmation>();
@@ -47,6 +50,12 @@ namespace Prism_Concepts_MEF
             {
                 System.Windows.MessageBox.Show("Canceld Dialog");
             }
+        }
+        public DelegateCommand NavigateCommand { get; set; }
+
+        protected void OnNavigateCommand()
+        {
+            _RegionManager.RequestNavigate("ShellContent", new Uri("/CustomerControl", UriKind.Relative));
         }
     }
 }

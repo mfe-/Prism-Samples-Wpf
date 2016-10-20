@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Prism.Regions;
+using Prism_Concepts_Infrastructure;
 using Prism_Concepts_UserControls;
 
 namespace Prism_Concepts_MEF
@@ -28,7 +30,7 @@ namespace Prism_Concepts_MEF
 
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(MainWindow).Assembly));
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(CustomerControl).Assembly));
-
+            this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(AutoPopulateExportedViewsBehavior).Assembly));
         }
 
         protected override void ConfigureContainer()
@@ -36,6 +38,13 @@ namespace Prism_Concepts_MEF
             base.ConfigureContainer();
 
             this.Container.ComposeExportedValue<IWebService>(new WebService());
+        }
+
+        protected override IRegionBehaviorFactory ConfigureDefaultRegionBehaviors()
+        {
+            var factory = base.ConfigureDefaultRegionBehaviors();
+            factory.AddIfMissing("AutoPopulateExportedViewsBehavior", typeof(AutoPopulateExportedViewsBehavior));
+            return factory;
         }
     }
 }
