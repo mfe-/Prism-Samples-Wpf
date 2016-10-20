@@ -27,3 +27,13 @@ Setup MEF and ViewModel
 8.) Compile and Run
 
 
+Setup a "Service" class with MEF
+1.) Create a interface for the Service like IWebService {         String Name { get; set; } }
+2.) Add Export attribute
+3.) Create a class which implements IWebService
+4.) Add using to Bootstrapper using System.ComponentModel.Composition; so that you can use MEF Extensions
+5.) Override ConfigureContainer and export Service by this.Container.ComposeExportedValue<IWebService>(new WebService());
+6.) Go to MainViewModel and add your IWebSerivce Interface to the constructor and save it to a member in the vm
+7.) Add        [ImportingConstructor] to Constructor of vm
+8.) Add if you want an additonal dependency to your vm constructor like prism.logging.Iloggerface
+9.) Compile and Run

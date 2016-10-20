@@ -10,9 +10,11 @@ namespace Prism_Concepts_MEF
     [Export]
     public class MainWindowViewModel : Prism.Mvvm.BindableBase
     {
-        public MainWindowViewModel()
+        protected readonly IWebService _IWebService;
+        [ImportingConstructor]
+        public MainWindowViewModel(IWebService webService, Prism.Logging.ILoggerFacade logger)
         {
-
+            _IWebService = webService;
         }
     }
 }

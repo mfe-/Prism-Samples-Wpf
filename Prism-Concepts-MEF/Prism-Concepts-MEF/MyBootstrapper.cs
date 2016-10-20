@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,13 @@ namespace Prism_Concepts_MEF
             base.ConfigureAggregateCatalog();
 
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(MainWindow).Assembly));
+        }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+
+            this.Container.ComposeExportedValue<IWebService>(new WebService());
         }
     }
 }
