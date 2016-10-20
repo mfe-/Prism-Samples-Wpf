@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism-Concepts-MEF", "Prism
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism-Concepts-UserControls", "Prism-Concepts-UserControls\Prism-Concepts-UserControls.csproj", "{50C40589-AE3B-47EB-ABD1-E63ED215C3BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism-Concepts-Infrastructure", "Prism-Concepts-Infrastructure\Prism-Concepts-Infrastructure.csproj", "{ECE198BC-CB7D-4D4C-8E02-2B5BB262B472}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{50C40589-AE3B-47EB-ABD1-E63ED215C3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50C40589-AE3B-47EB-ABD1-E63ED215C3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50C40589-AE3B-47EB-ABD1-E63ED215C3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE198BC-CB7D-4D4C-8E02-2B5BB262B472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE198BC-CB7D-4D4C-8E02-2B5BB262B472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE198BC-CB7D-4D4C-8E02-2B5BB262B472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE198BC-CB7D-4D4C-8E02-2B5BB262B472}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

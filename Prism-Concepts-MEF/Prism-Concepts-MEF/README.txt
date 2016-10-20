@@ -72,5 +72,7 @@ Interactions
                 </prism:InteractionRequestTrigger>
             </i:Interaction.Triggers>
 
-
+Regions & Navigation
+1.) Create infrastructure project
+2.) Add necessary files
 
