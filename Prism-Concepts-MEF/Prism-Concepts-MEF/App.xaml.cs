@@ -13,5 +13,13 @@ namespace Prism_Concepts_MEF
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            MyBootstrapper MyBootstrapper = new MyBootstrapper();
+            MyBootstrapper.Run();
+
+        }
     }
 }
