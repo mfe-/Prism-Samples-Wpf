@@ -37,3 +37,16 @@ Setup a "Service" class with MEF
 7.) Add        [ImportingConstructor] to Constructor of vm
 8.) Add if you want an additonal dependency to your vm constructor like prism.logging.Iloggerface
 9.) Compile and Run
+
+Commands
+1.) Add in VM DelegateCommand Property and init in constructor
+2.) OnExecute CallBack make MessageBox.Show()
+3.) Add Button to View with proper Command Binding
+4.) Check that you added System.Windows.Interactivity ( Add References -> Extensions )
+5.) Add Dockpanel
+6.) <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseEnter">
+                <i:InvokeCommandAction Command="{Binding Path=MessageCommand}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+

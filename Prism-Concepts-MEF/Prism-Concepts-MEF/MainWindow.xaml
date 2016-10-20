@@ -3,12 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"            
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+
         xmlns:local="clr-namespace:Prism_Concepts_MEF"
         mc:Ignorable="d"
         xmlns:prism="http://prismlibrary.com/"
+        d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Button Command="{Binding Path=MessageCommand}">Click Me</Button>
+        <DockPanel Background="Green"></DockPanel>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseDown">
+                <i:InvokeCommandAction Command="{Binding Path=MessageCommand}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+    </DockPanel>
 </Window>
