@@ -1,5 +1,7 @@
 ﻿First commit init
 
+agenda / commits 
+
 1.)	Project Setup (Bootstrapper und DI mit MEF)
 2.)	View und ViewModel erstellen
 3.)	DataContext setzen mit ViewModelLocator
@@ -49,4 +51,26 @@ Commands
                 <i:InvokeCommandAction Command="{Binding Path=MessageCommand}" />
             </i:EventTrigger>
         </i:Interaction.Triggers>
+
+Interactions
+1.) Add a new wpf project named Prism-Concepts-UserControl
+2.) add prism nuget packages
+3.) Add Export Attribute
+4.) Add xmlns namespace to view: set Background red
+5.) Go to Bootstrapper and create new assemblycatalog for new project
+6.) Create a InteractionRequest Property   MessageControlInteraction = new InteractionRequest<IConfirmation>(); in MainViewModel
+7.) create Raise and InteractionConformation Callback; Call in MessageButtonCommand Raise function
+8.) create UserControl CustomerControl and viewmodel which derived from Bindablebase and implements IInteractionRequestAware 
+9.) Add Button with Command which calls FinishInteraction on CustomerUserControl
+10.) Add to MainWindow View  <i:Interaction.Triggers>
+                <prism:InteractionRequestTrigger SourceObject="{Binding MessageControlInteraction,Mode=OneWay}">
+                    <prism:PopupWindowAction>
+                        <prism:PopupWindowAction.WindowContent>
+                            <uc:CustomerControl />
+                        </prism:PopupWindowAction.WindowContent>
+                    </prism:PopupWindowAction>
+                </prism:InteractionRequestTrigger>
+            </i:Interaction.Triggers>
+
+
 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Prism_Concepts_UserControls;
 
 namespace Prism_Concepts_MEF
 {
@@ -26,6 +27,8 @@ namespace Prism_Concepts_MEF
             base.ConfigureAggregateCatalog();
 
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(MainWindow).Assembly));
+            this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(CustomerControl).Assembly));
+
         }
 
         protected override void ConfigureContainer()

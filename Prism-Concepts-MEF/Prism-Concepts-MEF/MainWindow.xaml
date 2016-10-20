@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"            
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        
+        xmlns:uc="clr-namespace:Prism_Concepts_UserControls;assembly=Prism-Concepts-UserControls"
 
         xmlns:local="clr-namespace:Prism_Concepts_MEF"
         mc:Ignorable="d"
@@ -13,12 +15,25 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
-        <Button Command="{Binding Path=MessageCommand}">Click Me</Button>
-        <DockPanel Background="Green"></DockPanel>
-        <i:Interaction.Triggers>
-            <i:EventTrigger EventName="MouseDown">
-                <i:InvokeCommandAction Command="{Binding Path=MessageCommand}" />
-            </i:EventTrigger>
-        </i:Interaction.Triggers>
+
+        <Button Command="{Binding Path=MessageCommand}" Content="Click Me">
+            <i:Interaction.Triggers>
+                <prism:InteractionRequestTrigger SourceObject="{Binding MessageControlInteraction,Mode=OneWay}">
+                    <prism:PopupWindowAction>
+                        <prism:PopupWindowAction.WindowContent>
+                            <uc:CustomerControl />
+                        </prism:PopupWindowAction.WindowContent>
+                    </prism:PopupWindowAction>
+                </prism:InteractionRequestTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <DockPanel Background="Green">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDown">
+                    <i:InvokeCommandAction Command="{Binding Path=MessageCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DockPanel>
+
     </DockPanel>
 </Window>
