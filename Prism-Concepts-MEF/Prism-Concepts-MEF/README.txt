@@ -1,4 +1,4 @@
-﻿First commit init
+﻿First commit init (695a7ef7152978156c1e251cd20343574e411939)
 
 agenda / commits 
 
@@ -10,7 +10,7 @@ agenda / commits
 6.)	Regions & Navigation
 7.)	EventAggregator (Kommunikation unter ViewModels)
 
-Setup Prism
+Setup Prism (5b147f9d6a2e420c2b7c4973f8118b9e41b37d5c)
 1.) Install Prism.WPF, Prism.MEF NugetPackage
 2.) Create new Bootstrapper derived MefBootstrapper
 3.) App.xaml öffnen StartupUri="MainWindow.xaml" löschen
@@ -18,7 +18,7 @@ Setup Prism
 5.) Compile & Run -> nothing happens
 6.) Override in Bootstrapper CreateShell() which returns MainWindow, Override InitailizeShell which calls Show() of Shell.
 
-Setup MEF and ViewModel
+Setup MEF and ViewModel (61f885aacf52ca4c774b885ee1e99e27f06b864b)
 1.) Create ViewModel for MainWindow derived from BindableBase
 2.) Name Convention $"{UserControl}ViewModel"
 3.) Import namespace and add AP prism:ViewModelLocator.AutoWireViewModel="True" to autowire ViewModels
@@ -29,7 +29,7 @@ Setup MEF and ViewModel
 8.) Compile and Run
 
 
-Setup a "Service" class with MEF
+Setup a "Service" class with MEF (b0f9e8b3bfa2afcb6099f3e957776895e8fbeb1e)
 1.) Create a interface for the Service like IWebService {         String Name { get; set; } }
 2.) Add Export attribute
 3.) Create a class which implements IWebService
@@ -40,7 +40,7 @@ Setup a "Service" class with MEF
 8.) Add if you want an additonal dependency to your vm constructor like prism.logging.Iloggerface
 9.) Compile and Run
 
-Commands
+Commands (23c42e2d02ea45147f1cab9b411dcea9cce7dd1e)
 1.) Add in VM DelegateCommand Property and init in constructor
 2.) OnExecute CallBack make MessageBox.Show()
 3.) Add Button to View with proper Command Binding
@@ -52,7 +52,7 @@ Commands
             </i:EventTrigger>
         </i:Interaction.Triggers>
 
-Interactions
+Interactions (8c7299d5934f80641112536bf66b19110a309210)
 1.) Add a new wpf project named Prism-Concepts-UserControl
 2.) add prism nuget packages
 3.) Add Export Attribute
@@ -72,10 +72,10 @@ Interactions
                 </prism:InteractionRequestTrigger>
             </i:Interaction.Triggers>
 
-Regions & Navigation
+Regions & Navigation (1d22c9fb42b54cd909b5fdd07ae64451e98fef82)
 1.) Create infrastructure project
 2.) Add necessary files
-
+(eb4cddc0b981ed6ed7ad53968e2f97fe5e11fcf2)
 1.) Add to bootstrapper region factory and register assemblycatalog of infrastructure project
 2.) add to usercontrol project new uc named welcomecontrol and add proper vm (dont forget export/import attr., autowireprop)
 3.) add      <ContentControl x:Name="ShellContent" prism:RegionManager.RegionName="ShellContent" /> to mainwindow
